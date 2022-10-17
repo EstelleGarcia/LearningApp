@@ -16,9 +16,18 @@ struct HomeView: View {
                 ScrollView {
                     LazyVStack {
                         ForEach (model.modules) {module in
-                            // learning card
                             VStack (spacing: 20){
-                                HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, number: "\(module.content.lessons.count) lesson", time: module.content.time)
+                                NavigationLink {
+                                    ContentView().onAppear {
+                                        model.beginModule(_moduleId: module.id)
+                                    }
+                                } label: {
+                                    // learning card
+                                    HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, number: "\(module.content.lessons.count) lesson", time: module.content.time)
+                                }.accentColor(Color.black)
+
+                                    
+                                
                                 
                                 // test card
                                 HomeViewRow(image: module.test.image, title: "\(module.category) test", description: module.test.description, number: "\(module.test.questions.count) questions", time: module.test.time)

@@ -26,8 +26,8 @@ struct HomeViewRow: View {
                     .clipShape(Circle())
                 Spacer()
                 VStack(alignment: .leading, spacing: 10) {
-                    Text(title).bold()
-                    Text(description).font(.caption).padding(.bottom, 20)
+                    Text(title).multilineTextAlignment(.leading).bold()
+                    Text(description).font(.caption).multilineTextAlignment(.leading).padding(.bottom, 20)
                     HStack {
                         // number of lessons / questions
                         Image(systemName: "text.book.closed").resizable().frame(width: 15, height: 15)
