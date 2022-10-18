@@ -21,6 +21,7 @@
 		B12D842F28FE20E400FAA14B /* ContentDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D842E28FE20E400FAA14B /* ContentDetailView.swift */; };
 		B12D843228FE249000FAA14B /* AVKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B12D843128FE249000FAA14B /* AVKit.framework */; };
 		B12D843428FE25FE00FAA14B /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D843328FE25FE00FAA14B /* Constants.swift */; };
+		B12D847128FF0FDC00FAA14B /* CodeTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D847028FF0FDC00FAA14B /* CodeTextView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +40,7 @@
 		B12D842E28FE20E400FAA14B /* ContentDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentDetailView.swift; sourceTree = "<group>"; };
 		B12D843128FE249000FAA14B /* AVKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVKit.framework; path = System/Library/Frameworks/AVKit.framework; sourceTree = SDKROOT; };
 		B12D843328FE25FE00FAA14B /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B12D847028FF0FDC00FAA14B /* CodeTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CodeTextView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +103,7 @@
 				B12D842828FDFD0600FAA14B /* ContentView.swift */,
 				B12D842A28FE1CFE00FAA14B /* ContentViewRow.swift */,
 				B12D842E28FE20E400FAA14B /* ContentDetailView.swift */,
+				B12D847028FF0FDC00FAA14B /* CodeTextView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -224,6 +227,7 @@
 				B12D842F28FE20E400FAA14B /* ContentDetailView.swift in Sources */,
 				B12D841F28FDDA6E00FAA14B /* ContentModel.swift in Sources */,
 				B12D842B28FE1CFE00FAA14B /* ContentViewRow.swift in Sources */,
+				B12D847128FF0FDC00FAA14B /* CodeTextView.swift in Sources */,
 				B12D842528FDE05700FAA14B /* Models.swift in Sources */,
 				B12D842928FDFD0600FAA14B /* ContentView.swift in Sources */,
 				B12D843428FE25FE00FAA14B /* Constants.swift in Sources */,

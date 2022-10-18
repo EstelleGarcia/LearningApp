@@ -21,7 +21,7 @@ struct ContentDetailView: View {
                     .cornerRadius(10)
             }
             // description
-            
+            CodeTextView()
             // show next lesson button if there is a next lesson
             if model.hasNextLesson() {
                 Button {
@@ -42,6 +42,7 @@ struct ContentDetailView: View {
             }
         }
         .padding(/*@START_MENU_TOKEN@*/.all/*@END_MENU_TOKEN@*/)
+        .navigationTitle(lesson?.title ?? "")
     }
 }
 
