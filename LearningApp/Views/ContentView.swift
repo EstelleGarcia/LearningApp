@@ -15,7 +15,13 @@ struct ContentView: View {
                     if model.currentModule != nil {
                         ForEach (0..<model.currentModule!.content.lessons.count) {index in
                             // lesson card
-                            ContentViewRow(index: index)
+                            NavigationLink {
+                                ContentDetailView().onAppear(perform:{ model.beginLesson(_lessonIndex: index)})
+                            } label: {
+                                ContentViewRow(index: index)
+                            }.accentColor(Color.black)
+
+                            
                         }
                     }
                 }.padding()

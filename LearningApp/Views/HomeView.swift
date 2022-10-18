@@ -36,7 +36,7 @@ struct HomeView: View {
                     }.padding()
                 }
             }.navigationTitle("Get Started")
-        }
+        }.navigationViewStyle(.stack)
     }
 }
 
