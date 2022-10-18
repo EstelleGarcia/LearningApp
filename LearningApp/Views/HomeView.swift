@@ -17,14 +17,17 @@ struct HomeView: View {
                     LazyVStack {
                         ForEach (model.modules) {module in
                             VStack (spacing: 20){
-                                NavigationLink {
+                                NavigationLink (
+                                destination:
                                     ContentView().onAppear {
                                         model.beginModule(_moduleId: module.id)
-                                    }
-                                } label: {
+                                    },
+                                tag: module.id,
+                                selection: $model.currentContentSelected,
+                                label: {
                                     // learning card
                                     HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, number: "\(module.content.lessons.count) lesson", time: module.content.time)
-                                }.accentColor(Color.black)
+                                }).accentColor(Color.black)
 
                                     
                                 

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B10F79C228FF3FC600FECFDB /* RectangleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10F79C128FF3FC600FECFDB /* RectangleCard.swift */; };
 		B12D840C28FDD8F100FAA14B /* LearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D840B28FDD8F100FAA14B /* LearningApp.swift */; };
 		B12D840E28FDD8F100FAA14B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D840D28FDD8F100FAA14B /* HomeView.swift */; };
 		B12D841028FDD8F300FAA14B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B12D840F28FDD8F300FAA14B /* Assets.xcassets */; };
@@ -25,6 +26,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B10F79C128FF3FC600FECFDB /* RectangleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCard.swift; sourceTree = "<group>"; };
 		B12D840828FDD8F100FAA14B /* LearningApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12D840B28FDD8F100FAA14B /* LearningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningApp.swift; sourceTree = "<group>"; };
 		B12D840D28FDD8F100FAA14B /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 				B12D842A28FE1CFE00FAA14B /* ContentViewRow.swift */,
 				B12D842E28FE20E400FAA14B /* ContentDetailView.swift */,
 				B12D847028FF0FDC00FAA14B /* CodeTextView.swift */,
+				B10F79C128FF3FC600FECFDB /* RectangleCard.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -230,6 +233,7 @@
 				B12D847128FF0FDC00FAA14B /* CodeTextView.swift in Sources */,
 				B12D842528FDE05700FAA14B /* Models.swift in Sources */,
 				B12D842928FDFD0600FAA14B /* ContentView.swift in Sources */,
+				B10F79C228FF3FC600FECFDB /* RectangleCard.swift in Sources */,
 				B12D843428FE25FE00FAA14B /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
