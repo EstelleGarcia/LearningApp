@@ -20,12 +20,17 @@ class ContentModel: ObservableObject {
     var currentLessonIndex = 0
     
     // current lesson explanation
-    @Published var lessonDescription = NSAttributedString()
+    @Published var codeText = NSAttributedString()
+    
+    // current question of the test
+    @Published var currentQuestion: Question?
+    @Published var currentQuestionIndex = 0
     
     var styleData: Data?
     
     // current selected content and test
     @Published var currentContentSelected: Int?
+    @Published var currentTestSelected: Int?
     
     init () {
         getLocalData()
@@ -57,10 +62,10 @@ class ContentModel: ObservableObject {
     }
     
     //MARK: - Module navigation method
-    func beginModule(_moduleId: Int){
+    func beginModule(_ moduleId: Int){
         // set the current module
         for index in 0..<modules.count {
-            if modules[index].id == _moduleId {
+            if modules[index].id == moduleId {
                 //found the matching module
                 currentModuleIndex = index
                 break
@@ -70,17 +75,17 @@ class ContentModel: ObservableObject {
         currentModule = modules[currentModuleIndex]
     }
     //MARK: - Lesson navigation method
-    func beginLesson(_lessonIndex: Int) {
+    func beginLesson(_ lessonIndex: Int) {
         // check that the lesson index is in range of module lesson
-        if _lessonIndex < currentModule!.content.lessons.count {
-            currentLessonIndex = _lessonIndex
+        if lessonIndex < currentModule!.content.lessons.count {
+            currentLessonIndex = lessonIndex
         }
         else {
             currentLessonIndex = 0
         }
         //set current lesson
         currentLesson = currentModule!.content.lessons[currentLessonIndex]
-        lessonDescription = addStyling(_htmlString: currentLesson!.explanation)
+        codeText = addStyling(currentLesson!.explanation)
     }
     //MARK: - advance lesson
     func nextLesson() {
@@ -90,7 +95,7 @@ class ContentModel: ObservableObject {
         if currentLessonIndex < currentModule!.content.lessons.count {
             // set the current lesson property
             currentLesson = currentModule!.content.lessons[currentLessonIndex]
-            lessonDescription = addStyling(_htmlString: currentLesson!.explanation)
+            codeText = addStyling(currentLesson!.explanation)
         }
         else {
             // reset lesson state
@@ -109,8 +114,26 @@ class ContentModel: ObservableObject {
         }*/
         return (currentLessonIndex < currentModule!.content.lessons.count - 1)
     }
+    //MARK: - Test Navigation method
+    func beginTest(_ moduleId: Int) {
+        // set the current module
+        beginModule(moduleId)
+        
+        // set the current Question
+        currentQuestionIndex = 0
+        
+        //set current lesson
+        // check we actually do have questions
+        if currentModule?.test.questions.count ?? 0 > 0 {
+            //set the current question to the first one
+            currentQuestion = currentModule!.test.questions[currentQuestionIndex]
+            // set question content as well
+            codeText = addStyling(currentQuestion!.content)
+        }
+        
+    }
     //MARK: - code styling
-    private func addStyling(_htmlString: String) -> NSAttributedString {
+    private func addStyling(_ htmlString: String) -> NSAttributedString {
         var resultString = NSAttributedString()
         var data = Data()
         
@@ -119,7 +142,7 @@ class ContentModel: ObservableObject {
             data.append(self.styleData!)
         }
         //Add the html data
-        data.append(Data(_htmlString.utf8))
+        data.append(Data(htmlString.utf8))
         // convert to attributed string
         do {
             let attributedString = try NSAttributedString(data: data, options: [.documentType: NSAttributedString.DocumentType.html], documentAttributes: nil)

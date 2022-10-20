@@ -18,27 +18,36 @@ struct HomeView: View {
                         ForEach (model.modules) {module in
                             VStack (spacing: 20){
                                 NavigationLink (
-                                destination:
+                                    destination:
                                     ContentView().onAppear {
-                                        model.beginModule(_moduleId: module.id)
+                                        model.beginModule(module.id)
                                     },
-                                tag: module.id,
-                                selection: $model.currentContentSelected,
-                                label: {
+                                    tag: module.id,
+                                    selection: $model.currentContentSelected)
+                                {
                                     // learning card
                                     HomeViewRow(image: module.content.image, title: "Learn \(module.category)", description: module.content.description, number: "\(module.content.lessons.count) lesson", time: module.content.time)
-                                }).accentColor(Color.black)
+                                }.accentColor(Color.black)
 
-                                    
-                                
-                                
-                                // test card
-                                HomeViewRow(image: module.test.image, title: "\(module.category) test", description: module.test.description, number: "\(module.test.questions.count) questions", time: module.test.time)
+                                NavigationLink(
+                                    destination:
+                                        TestView()
+                                        .onAppear(perform: {
+                                            model.beginTest(module.id)
+                                        }),
+                                    tag: module.id,
+                                    selection: $model.currentTestSelected) {
+                                        
+                                        // test card
+                                        HomeViewRow(image: module.test.image, title: "\(module.category) test", description: module.test.description, number: "\(module.test.questions.count) questions", time: module.test.time)
+                                    }.accentColor(Color.black)
+
+                               
                             }
                         }
                     }.padding()
                 }
-            }.navigationTitle("Get Started")
+            }.navigationBarTitle("Get Started")
         }.navigationViewStyle(.stack)
     }
 }

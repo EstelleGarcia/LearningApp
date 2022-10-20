@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B10059072901A7E2007F8E9E /* TestView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10059062901A7E2007F8E9E /* TestView.swift */; };
 		B10F79C228FF3FC600FECFDB /* RectangleCard.swift in Sources */ = {isa = PBXBuildFile; fileRef = B10F79C128FF3FC600FECFDB /* RectangleCard.swift */; };
 		B12D840C28FDD8F100FAA14B /* LearningApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D840B28FDD8F100FAA14B /* LearningApp.swift */; };
 		B12D840E28FDD8F100FAA14B /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12D840D28FDD8F100FAA14B /* HomeView.swift */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B10059062901A7E2007F8E9E /* TestView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestView.swift; sourceTree = "<group>"; };
 		B10F79C128FF3FC600FECFDB /* RectangleCard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RectangleCard.swift; sourceTree = "<group>"; };
 		B12D840828FDD8F100FAA14B /* LearningApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearningApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B12D840B28FDD8F100FAA14B /* LearningApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearningApp.swift; sourceTree = "<group>"; };
@@ -105,6 +107,7 @@
 				B12D842828FDFD0600FAA14B /* ContentView.swift */,
 				B12D842A28FE1CFE00FAA14B /* ContentViewRow.swift */,
 				B12D842E28FE20E400FAA14B /* ContentDetailView.swift */,
+				B10059062901A7E2007F8E9E /* TestView.swift */,
 				B12D847028FF0FDC00FAA14B /* CodeTextView.swift */,
 				B10F79C128FF3FC600FECFDB /* RectangleCard.swift */,
 			);
@@ -224,6 +227,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B10059072901A7E2007F8E9E /* TestView.swift in Sources */,
 				B12D840E28FDD8F100FAA14B /* HomeView.swift in Sources */,
 				B12D842728FDF42700FAA14B /* HomeViewRow.swift in Sources */,
 				B12D840C28FDD8F100FAA14B /* LearningApp.swift in Sources */,
